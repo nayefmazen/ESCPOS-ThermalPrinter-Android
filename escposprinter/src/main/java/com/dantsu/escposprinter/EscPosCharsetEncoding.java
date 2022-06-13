@@ -15,6 +15,17 @@ public class EscPosCharsetEncoding {
         this.charsetCommand = new byte[]{0x1B, 0x74, (byte) escPosCharsetId};
     }
 
+    /**
+     * Create new instance of EscPosCharsetEncoding.
+     *
+     * @param charsetName Name of charset encoding (Ex: windows-1252)
+     * @param charsetCommand byte array command for charset encoding (Ex: [0x1B, 0x74, 0x10])
+     */
+    public EscPosCharsetEncoding(String charsetName, byte[] charsetCommand){
+        this.charsetName = charsetName;
+        this.charsetCommand = charsetCommand;
+    }
+
     public byte[] getCommand() {
         return this.charsetCommand;
     }
